@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 public class Building {
     private ArrayList<Sensor> sensorsPresent;
+    private String nom;
 
-    public Building() {
+    public Building(String nom) {
         this.sensorsPresent = new ArrayList<Sensor>();
+        this.nom = nom;
     }
 
     public void addSensor(Sensor aSensor){
