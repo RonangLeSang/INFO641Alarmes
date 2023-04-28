@@ -3,10 +3,10 @@ import java.util.EventObject;
 
 public abstract class BioHazardEvent extends EventObject {
 
-    String type;
-    Date date;
-    Building localisation;
-    int importanceLevel;
+    private String type;
+    private Date date;
+    private Building localisation;
+    private int importanceLevel;
 
     public BioHazardEvent(Object source, String type, Date date, Building localisation, int importanceLevel) {
         super(source);
@@ -28,6 +28,10 @@ public abstract class BioHazardEvent extends EventObject {
         return localisation;
     }
 
+    public int getImportanceLevel() {
+        return importanceLevel;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -38,5 +42,9 @@ public abstract class BioHazardEvent extends EventObject {
 
     public void setLocalisation(Building localisation) {
         this.localisation = localisation;
+    }
+
+    public void setImportanceLevel(int importanceLevel) {
+        this.importanceLevel = importanceLevel;
     }
 }
