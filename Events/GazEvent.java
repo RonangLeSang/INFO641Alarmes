@@ -1,4 +1,7 @@
+package Events;
+
 import java.util.Date;
+import src.*;
 
 public class GazEvent extends BioHazardEvent{
 
