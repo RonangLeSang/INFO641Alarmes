@@ -1,6 +1,8 @@
 package src;
 
 import Events.FireEvent;
+import Events.GazEvent;
+import Events.RadiationEvent;
 
 import java.util.Date;
 
@@ -15,11 +17,25 @@ public class Sensor {
     }
 
 
-    public FireEvent generateFireHazard(Date date, Building localisation, int importanceLevel){
+    public FireEvent generateNewFireHazard(Date date, Building localisation, int importanceLevel){
         /*
         method that will generate a fire hazard event
          */
         return new FireEvent(this, date, localisation, importanceLevel );
 
     }
+
+    public GazEvent generateNewGazEvent(String gazType,Date date, Building localisation, int importanceLevel){
+        /*
+        Method that will generate a new gaz event */
+        return new GazEvent(this, gazType, date, localisation, importanceLevel);
+    }
+    public RadiationEvent generateNewRadiationEvent(int radiationLevel, Date date, Building localisation, int importanceLevel){
+        /*
+        Method that will generate a new radiation event
+        */
+        return new RadiationEvent(this, radiationLevel, date, localisation,importanceLevel);
+    }
+
+
 }
