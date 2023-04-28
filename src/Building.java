@@ -1,4 +1,7 @@
+package src;
+
 import java.util.ArrayList;
+
 
 public class Building {
     private ArrayList<Sensor> sensorsPresent;

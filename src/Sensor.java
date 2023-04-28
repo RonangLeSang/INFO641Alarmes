@@ -1,4 +1,9 @@
+package src;
+
+import Events.FireEvent;
+
 import java.util.Date;
+
 
 public class Sensor {
     private String name;

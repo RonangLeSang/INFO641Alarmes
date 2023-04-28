@@ -1,5 +1,8 @@
+package Events;
+
 import java.util.Date;
 import java.util.EventObject;
+import src.*;
 
 public abstract class BioHazardEvent extends EventObject {
 
