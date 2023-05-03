@@ -11,6 +11,7 @@ import java.util.Date;
 public class ControlRoom {
 
     ArrayList<Monitor> listMonitor = new ArrayList<Monitor>();
+    ArrayList<Building> listBuildings = new ArrayList<Building>();
 
     public void addMonitor(Monitor aMonitor) {
         this.listMonitor.add(aMonitor);
@@ -35,5 +36,13 @@ public class ControlRoom {
             }
         }
 
+    }
+
+    public ArrayList<Monitor> getListMonitor() {
+        return listMonitor;
+    }
+
+    public ArrayList<Building> getListBuildings() {
+        return listBuildings;
     }
 }

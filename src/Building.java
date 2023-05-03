@@ -4,22 +4,31 @@ import java.util.ArrayList;
 
 
 public class Building {
-    private ArrayList<Sensor> sensorsPresent;
+    private GazSensor gazSensor;
+    private RadiationSensor radiationSensor;
+    private FireSensor fireSensor;
     private String name;
 
-    public Building(String name) {
-        this.sensorsPresent = new ArrayList<Sensor>();
+    public Building(GazSensor gazSensor, RadiationSensor radiationSensor, FireSensor fireSensor, String name) {
+        this.gazSensor = gazSensor;
+        this.radiationSensor = radiationSensor;
+        this.fireSensor = fireSensor;
         this.name = name;
-    }
-
-    public void addSensor(Sensor aSensor){
-        /*
-        Method that add a sensor into the ArrayList "sensorsPresent"
-         */
-        this.sensorsPresent.add(aSensor);
     }
 
     public String getName() {
         return name;
+    }
+
+    public GazSensor getGazSensor() {
+        return gazSensor;
+    }
+
+    public RadiationSensor getRadiationSensor() {
+        return radiationSensor;
+    }
+
+    public FireSensor getFireSensor() {
+        return fireSensor;
     }
 }
