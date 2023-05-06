@@ -1,6 +1,7 @@
 package src;
 
 import Events.BioHazardEvent;
+import Events.FireEvent;
 import Events.GazEvent;
 import Events.RadiationEvent;
 
@@ -12,11 +13,17 @@ public class MonitorB extends Monitor implements GazListener, RadiationListener{
         super();
     }
 
+    @Override
+    public void manageFire(FireEvent fireEvent) {
+        this.addEvent(fireEvent);
+    }
+
     public void manageGaz(GazEvent gazEvent) {
-        this.listEvent.add(gazEvent);
+        this.addEvent(gazEvent);
+
     }
     public void manageRadiation(RadiationEvent radiationEvent){
-        this.listEvent.add(radiationEvent);
+        this.addEvent(radiationEvent);
     }
 
 

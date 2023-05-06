@@ -6,6 +6,14 @@ import src.*;
 public class FireEvent extends BioHazardEvent{
 
     public FireEvent(Object source, Date date, Building localisation, int importanceLevel) {
-        super(source, "fire", date, localisation, importanceLevel);
+        super(source, date, localisation, importanceLevel);
+    }
+
+    @Override
+    public String toString() {
+        return "Fire event : -Date : "
+                + this.getDate() +
+                "  -Localisation : " + this.getLocalisation() + "\n" +
+                "  -Importance level : " + this.getImportanceLevel();
     }
 }
