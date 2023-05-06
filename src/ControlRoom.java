@@ -16,21 +16,21 @@ public class ControlRoom {
         this.listMonitor.add(aMonitor);
     }
 
-    public void newHazard(BioHazardEvent bioHazardEvent) {
+    public void manageNewHazard(BioHazardEvent bioHazardEvent) {
         if (bioHazardEvent instanceof GazEvent) {
             for (Monitor monitor : listMonitor) {
-                monitor.listEvent.add(bioHazardEvent);
+                monitor.addEvent(bioHazardEvent);
             }
         } else if (bioHazardEvent instanceof FireEvent) {
             for (Monitor monitor : listMonitor) {
                 if (monitor instanceof MonitorA) {
-                    monitor.listEvent.add(bioHazardEvent);
+                    monitor.addEvent(bioHazardEvent);
                 }
             }
         } else {
             for (Monitor monitor : listMonitor) {
                 if (monitor instanceof MonitorB) {
-                    monitor.listEvent.add(bioHazardEvent);
+                    monitor.addEvent(bioHazardEvent);
                 }
             }
         }
