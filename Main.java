@@ -1,4 +1,5 @@
 import src.Building;
+import src.ControlRoom;
 
 import java.util.ArrayList;
 
@@ -7,14 +8,8 @@ public class Main {
         System.out.println("Salut");
 
         ArrayList<Building> buildingsList = new ArrayList<Building>();
-        buildingsList.add(new Building("bat A"));
-        buildingsList.add(new Building("bat B"));
-        buildingsList.add(new Building("bat C"));
-        buildingsList.add(new Building("bat D"));
-        buildingsList.add(new Building("bat E"));
-        buildingsList.add(new Building("bat 7"));
-        GenerateHazardModel model = new GenerateHazardModel(buildingsList);
-        GenerateHazardWindow window = new GenerateHazardWindow(model);
+        ControlRoom controlRoom = new ControlRoom();
+        GenerateHazardWindow window = new GenerateHazardWindow(controlRoom);
 
     }
 }
