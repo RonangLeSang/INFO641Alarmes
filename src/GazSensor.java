@@ -12,6 +12,11 @@ public class GazSensor extends Sensor{
         super(name, building);
     }
 
+    @Override
+    public void generateHazard() {
+
+    }
+
     public GazEvent newGazEvent(String gazType, Date date, Building localisation, int importanceLevel){
         /*
         Method that will generate a new gaz event */

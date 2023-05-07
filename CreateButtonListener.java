@@ -1,4 +1,5 @@
 import src.Building;
+import src.ControlRoom;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,7 @@ import java.util.Date;
 
 public class CreateButtonListener implements ActionListener {
 
+    private ControlRoom controlRoom;
     private JComboBox comboBoxBuilding;
     private JComboBox comboBoxType;
     private JSpinner spinnerLevel;
@@ -15,7 +17,8 @@ public class CreateButtonListener implements ActionListener {
     private JSpinner spinnerRadiationLevel;
     private ArrayList<Building> listBuildings;
 
-    public CreateButtonListener(JComboBox comboBoxBuilding, JComboBox comboBoxType, JSpinner spinnerLevel, JTextArea textGazType, JSpinner spinnerRadiationLevel, ArrayList<Building> listBuildings) {
+    public CreateButtonListener(ControlRoom controlRoom, JComboBox comboBoxBuilding, JComboBox comboBoxType, JSpinner spinnerLevel, JTextArea textGazType, JSpinner spinnerRadiationLevel, ArrayList<Building> listBuildings) {
+        this.controlRoom = controlRoom;
         this.comboBoxBuilding = comboBoxBuilding;
         this.comboBoxType = comboBoxType;
         this.spinnerLevel = spinnerLevel;
@@ -29,15 +32,15 @@ public class CreateButtonListener implements ActionListener {
         switch(comboBoxType.getSelectedIndex()){
             case 0:
                 System.out.println("fire");
-                getBuilding().getFireSensor().generateHazard(new Date(), getBuilding(), spinnerLevel.getValue());
+                controlRoom.manageNewHazard(getBuilding().getFireSensor().newFireEvent(new Date(), getBuilding(), (Integer) spinnerLevel.getValue()));
                 break;
             case 1:
                 System.out.println("radiation");
-                getBuilding().getRadiationSensor().generateHazard(new Date(), getBuilding(), spinnerLevel.getValue(), spinnerRadiationLevel.getValue());
+                controlRoom.manageNewHazard(getBuilding().getRadiationSensor().newRadiationEvent((Integer) spinnerRadiationLevel.getValue(), new Date(), getBuilding(), (Integer) spinnerLevel.getValue()));
                 break;
             case 2:
                 System.out.println("gaz");
-                getBuilding().getGazSensor().generateHazard(new Date(), getBuilding(), spinnerLevel.getValue(), textGazType.getText());
+                controlRoom.manageNewHazard(getBuilding().getGazSensor().newGazEvent(textGazType.getText(), new Date(), getBuilding(), (Integer) spinnerLevel.getValue()));
                 break;
         }
     }
