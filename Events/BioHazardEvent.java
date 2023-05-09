@@ -20,7 +20,7 @@ public abstract class BioHazardEvent extends EventObject {
 
     public abstract String displayDetails();
 
-    public abstract String displayDetails();
+
 
     public String getType() {
         return type;
