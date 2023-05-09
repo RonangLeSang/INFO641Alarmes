@@ -12,7 +12,8 @@ import java.util.Date;
 
 public class MonitorWindow extends JFrame {
 
-    private JList<BioHazardEvent> eventslist;
+    private JList<BioHazardEvent> eventsList;
+    JScrollPane eventsScrollPane;
     private JButton detailsButton1, detailsButton2;
     private Monitor aMonitor;
     public MonitorWindow(Monitor aMonitor){
@@ -32,8 +33,8 @@ public class MonitorWindow extends JFrame {
 //        aMonitor.manageFire(event2);
 //        aMonitor.manageFire(event3);
         BioHazardEvent[] events = aMonitor.getListEvent().toArray(new BioHazardEvent[0]);
-        this.eventslist = new JList<>(events);
-        JScrollPane eventsScrollPane = new JScrollPane(eventslist);
+        this.eventsList = new JList<>(events);
+        eventsScrollPane = new JScrollPane(eventsList);
         eventsScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         this.add(eventsScrollPane, BorderLayout.CENTER);
 
@@ -48,8 +49,13 @@ public class MonitorWindow extends JFrame {
 
         this.setVisible(true);
     }
-
-
+    
+    public void refresh(){
+        remove(eventsScrollPane);
+        BioHazardEvent[] events = aMonitor.getListEvent().toArray(new BioHazardEvent[0]);
+        eventsScrollPane = new JScrollPane(new JList<>(events));
+        add(eventsScrollPane, BorderLayout.CENTER);
+    }
 
     public static void main(String[] args) {
         Monitor aMonitor = new MonitorA();

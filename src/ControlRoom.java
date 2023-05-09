@@ -23,6 +23,7 @@ public class ControlRoom {
     }
 
     public void manageNewHazard(BioHazardEvent bioHazardEvent) {
+        System.out.println("ouoiuouiuoiuiouoiuiouoiuoiu");
         if (bioHazardEvent instanceof GazEvent) {
             for (Monitor monitor : listMonitor) {
                 monitor.addEvent(bioHazardEvent);
