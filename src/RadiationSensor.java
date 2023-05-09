@@ -9,10 +9,6 @@ public class RadiationSensor extends Sensor{
         super(name, building);
     }
 
-    @Override
-    public void generateHazard() {
-
-    }
 
     public RadiationEvent newRadiationEvent(int radiationLevel, Date date, Building localisation, int importanceLevel){
         /*

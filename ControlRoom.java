@@ -20,6 +20,7 @@ public class ControlRoom {
     }
 
     public void manageNewHazard(BioHazardEvent bioHazardEvent) {
+        /** ajoute aux moniteurs concernés les alarmes */
         if (bioHazardEvent instanceof GazEvent) {
             for (Monitor monitor : listMonitor) {
                 monitor.addEvent(bioHazardEvent);
