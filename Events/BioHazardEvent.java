@@ -18,7 +18,7 @@ public abstract class BioHazardEvent extends EventObject {
         this.importanceLevel = importanceLevel;
     }
 
-    public abstract String toString();
+    public abstract String displayDetails();
 
     public String getType() {
         return type;

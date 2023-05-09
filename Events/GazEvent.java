@@ -16,11 +16,11 @@ public class GazEvent extends BioHazardEvent{
         return gazType;
     }
 
-    public String toString() {
+    public String displayDetails() {
         return "Gaz event : \n\t-Type of gaz : " + this.gazType + "\n"  +
                 "-Date : "
                 + this.getDate() +  "\n"+
-                "-Localisation : " + this.getLocalisation() + "\n" +
+                "-Localisation : " + this.getLocalisation().getName() + "\n" +
                 "-Importance level : " + this.getImportanceLevel();
     }
 }

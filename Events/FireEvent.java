@@ -10,7 +10,7 @@ public class FireEvent extends BioHazardEvent{
     }
 
     @Override
-    public String toString() {
+    public String displayDetails() {
         return "Fire event : -Date : "
                 + this.getDate() +
                 "  -Localisation : " + this.getLocalisation() + "\n" +
