@@ -32,7 +32,7 @@ public class CreateButtonListener implements ActionListener {
         switch(comboBoxType.getSelectedIndex()){
             case 0:
                 System.out.println("fire");
-                controlRoom.manageNewHazard(getBuilding().getFireSensor().newFireEvent(new Date(), getBuilding(), (Integer) spinnerLevel.getValue()));
+                controlRoom.manageNewHazard(getBuilding().getFireSensor().newFireEvent(new Date(), getBuilding(), Integer.parseInt(spinnerLevel.getValue().toString())));
                 break;
             case 1:
                 System.out.println("radiation");

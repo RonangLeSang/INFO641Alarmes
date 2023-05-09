@@ -24,12 +24,13 @@ public class MonitorWindow extends JFrame {
         this.setSize(1000, 650);
         this.setLocationRelativeTo(null);
 
-        FireEvent event1 = new FireEvent("Alarme incendie", new Date(), new Building("Bâtiment A"), 2);
-        FireEvent event2 = new FireEvent("Détecteur de fumée", new Date(), new Building("Bâtiment B"), 1);
-        FireEvent event3 = new FireEvent("Capteur de température", new Date(), new Building("Bâtiment C"), 3);
-        aMonitor.manageFire(event1);
-        aMonitor.manageFire(event2);
-        aMonitor.manageFire(event3);
+
+//        FireEvent event1 = new FireEvent("Alarme incendie", new Date(), new Building("Bâtiment A"), 2);
+//        FireEvent event2 = new FireEvent("Détecteur de fumée", new Date(), new Building("Bâtiment B"), 1);
+//        FireEvent event3 = new FireEvent("Capteur de température", new Date(), new Building("Bâtiment C"), 3);
+//        aMonitor.manageFire(event1);
+//        aMonitor.manageFire(event2);
+//        aMonitor.manageFire(event3);
         BioHazardEvent[] events = aMonitor.getListEvent().toArray(new BioHazardEvent[0]);
         this.eventslist = new JList<>(events);
         JScrollPane eventsScrollPane = new JScrollPane(eventslist);
