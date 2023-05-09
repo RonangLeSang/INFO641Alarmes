@@ -2,16 +2,17 @@ import Events.BioHazardEvent;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class MonitorWindow extends JFrame {
 
     private JList<BioHazardEvent> eventsList;
     JScrollPane eventsScrollPane;
     private JButton detailsButton1, detailsButton2;
-    private Monitor aMonitor;
-    public MonitorWindow(Monitor aMonitor){
+//    private Monitor aMonitor;
+    public MonitorWindow(){
 
-        this.aMonitor = aMonitor;
+//        this.aMonitor = aMonitor;
 
         this.setTitle("Monitor Window");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -25,7 +26,8 @@ public class MonitorWindow extends JFrame {
 //        aMonitor.manageFire(event1);
 //        aMonitor.manageFire(event2);
 //        aMonitor.manageFire(event3);
-        BioHazardEvent[] events = aMonitor.getListEvent().toArray(new BioHazardEvent[0]);
+//        BioHazardEvent[] events = aMonitor.getListEvent().toArray(new BioHazardEvent[0]);
+        BioHazardEvent[] events = {};
         this.eventsList = new JList<>(events);
         eventsScrollPane = new JScrollPane(eventsList);
         eventsScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -43,17 +45,18 @@ public class MonitorWindow extends JFrame {
         this.setVisible(true);
     }
     
-    public void refresh(){
+    public void refresh(ArrayList<BioHazardEvent> ListEvent){
+        System.out.println("refresh");
         remove(eventsScrollPane);
-        BioHazardEvent[] events = aMonitor.getListEvent().toArray(new BioHazardEvent[0]);
+        BioHazardEvent[] events = ListEvent.toArray(new BioHazardEvent[0]);
         eventsScrollPane = new JScrollPane(new JList<>(events));
         add(eventsScrollPane, BorderLayout.CENTER);
     }
 
-    public static void main(String[] args) {
-        Monitor aMonitor = new MonitorA();
-        new MonitorWindow(aMonitor);
-    }
+//    public static void main(String[] args) {
+//        Monitor aMonitor = new MonitorA();
+//        new MonitorWindow(aMonitor);
+//    }
 }
 
 

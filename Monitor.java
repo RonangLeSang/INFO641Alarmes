@@ -39,7 +39,7 @@ public abstract class Monitor extends JFrame{
             message += "Alarme de type radiation";
         }
 
-        JOptionPane.showMessageDialog(this,new CustomDialog(this.monitorWindow, message));
+        JOptionPane.showOptionDialog(this, new CustomDialog(this.monitorWindow,this, message));
     }
 
 

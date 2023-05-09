@@ -1,10 +1,12 @@
-import javax.management.monitor.Monitor;
 import javax.swing.*;
 
 public class CustomDialog extends JOptionPane {
     private MonitorWindow monitorWindow;
-    public CustomDialog(MonitorWindow monitorWindow, String message) {
+    private Monitor monitor;
+
+    public CustomDialog(MonitorWindow monitorWindow, Monitor monitor, String message) {
         this.monitorWindow = monitorWindow;
+        this.monitor = monitor;
         setMessage(message);
         setOptionType(JOptionPane.DEFAULT_OPTION);
         setSelectionValues(new Object[]{"OK"});
@@ -14,7 +16,7 @@ public class CustomDialog extends JOptionPane {
     @Override
     public void selectInitialValue() {
         super.selectInitialValue();
-        this.monitorWindow.refresh();
+        this.monitorWindow.refresh(monitor.getListEvent());
 
     }
 }
