@@ -1,13 +1,10 @@
-package src;
-
-import Events.BioHazardEvent;
 import Events.FireEvent;
 import Events.GazEvent;
 import Events.RadiationEvent;
+import src.GazListener;
+import src.RadiationListener;
 
-import java.util.ArrayList;
-
-public class MonitorB extends Monitor implements GazListener, RadiationListener{
+public class MonitorB extends Monitor implements GazListener, RadiationListener {
 
     public MonitorB() {
         super();

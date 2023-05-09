@@ -1,39 +1,29 @@
-package src;
-
 import Events.BioHazardEvent;
 import Events.FireEvent;
 import Events.GazEvent;
-import Events.RadiationEvent;
+ import Events.RadiationEvent;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Date;
 
-public class MonitorA extends Monitor implements FireListener, GazListener{//gère les gaz et les feux
+public abstract class Monitor extends JWindow {
+    protected ArrayList<BioHazardEvent> listEvent;
 
-
-
-    public MonitorA() {
-        super();
-
+    public Monitor(){
+        this.listEvent = new ArrayList<BioHazardEvent>();
     }
 
-
-    @Override
-     public void manageFire(FireEvent fireEvent) {
-        this.addEvent(fireEvent);
-
-
+    public ArrayList<BioHazardEvent> getListEvent() {
+        return listEvent;
     }
 
-    @Override
-    public void manageGaz(GazEvent gazEvent) {
-        this.addEvent(gazEvent);
+    public void addEvent(BioHazardEvent bioHazardEvent){
+        this.listEvent.add(bioHazardEvent);
+        showDialog(bioHazardEvent);
     }
 
-    public ArrayList<BioHazardEvent> getListeEvent(){
-        return this.listEvent;
-    }
+    public abstract void  manageFire(FireEvent fireEvent);
+    public abstract void  manageGaz(GazEvent gazEvent);
 
     private void showDialog(BioHazardEvent event) {
         String message = "";
@@ -49,5 +39,7 @@ public class MonitorA extends Monitor implements FireListener, GazListener{//gè
 
         JOptionPane.showMessageDialog(this, message, "Détails de l'alarme", JOptionPane.INFORMATION_MESSAGE);
     }
+
+
 
 }

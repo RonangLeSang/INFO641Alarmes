@@ -1,14 +1,7 @@
 import Events.BioHazardEvent;
-import Events.FireEvent;
-import src.Building;
-import src.Monitor;
-import src.MonitorA;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class MonitorWindow extends JFrame {
 
