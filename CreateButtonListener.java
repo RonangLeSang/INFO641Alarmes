@@ -45,6 +45,7 @@ public class CreateButtonListener implements ActionListener {
     }
 
     public Building getBuilding(){
+        /** renvoi l'objet building en fonction de son nom */
         for(Building building : listBuildings){
             if(building.getName().equals(comboBoxBuilding.getSelectedItem())){
                 return building;

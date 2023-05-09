@@ -10,11 +10,6 @@ public class MonitorB extends Monitor implements GazListener, RadiationListener 
         super(monitorWindow);
     }
 
-    @Override
-    public void manageFire(FireEvent fireEvent) {
-        this.addEvent(fireEvent);
-    }
-
     public void manageGaz(GazEvent gazEvent) {
         this.addEvent(gazEvent);
 

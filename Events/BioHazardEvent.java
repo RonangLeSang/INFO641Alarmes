@@ -21,17 +21,10 @@ public abstract class BioHazardEvent extends EventObject {
     public abstract String displayDetails();
 
 
-
-    public String getType() {
-        return type;
-    }
+    /** renvoi une chaine de caractère contenant les détails de l'alarme */
 
     public Date getDate() {
         return date;
-    }
-
-    public Building getLocalisation() {
-        return localisation;
     }
 
     public int getImportanceLevel() {

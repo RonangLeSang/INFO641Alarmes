@@ -25,10 +25,8 @@ public abstract class Monitor extends JFrame{
         showDialog(bioHazardEvent);
     }
 
-    public abstract void  manageFire(FireEvent fireEvent);
-    public abstract void  manageGaz(GazEvent gazEvent);
-
     private void showDialog(BioHazardEvent event) {
+        /** fait apparaitre une fenetre de dialogue indiquant la création d'une fenêtre */
         String message = "";
 
         if (event instanceof FireEvent) {
