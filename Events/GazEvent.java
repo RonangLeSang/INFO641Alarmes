@@ -17,10 +17,10 @@ public class GazEvent extends BioHazardEvent{
     }
 
     public String toString() {
-        return "Gaz event : \n\t-Type of gaz : " + this.gazType + "\n"  +
-                "-Date : "
-                + this.getDate() +  "\n"+
-                "-Localisation : " + this.getLocalisation() + "\n" +
-                "-Importance level : " + this.getImportanceLevel();
+        return "Alarme type gaz niveau d'importance : " + getImportanceLevel();
+    }
+
+    public String displayDetails(){
+        return "Alarme type gaz niveau d'importance : " + getImportanceLevel();
     }
 }

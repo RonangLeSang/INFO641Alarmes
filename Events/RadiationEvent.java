@@ -12,10 +12,10 @@ public class RadiationEvent extends BioHazardEvent{
         this.radiationLevel = radiationLevel;
     }
     public String toString() {
-        return "Fire event : \n\t-Radation level : " + this.radiationLevel + "\n" +
-                "-Date : "
-                + this.getDate() + "\n" +
-                "-Localisation : " + this.getLocalisation() + "\n" +
-                "-Importance level : " + this.getImportanceLevel();
+        return "Alarme type radiation niveau d'importance : " + getImportanceLevel();
+    }
+
+    public String displayDetails(){
+        return "Alarme type radiation niveau d'importance : " + getImportanceLevel();
     }
 }

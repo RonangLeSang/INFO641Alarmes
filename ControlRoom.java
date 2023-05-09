@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class ControlRoom {
 
-    ArrayList<Monitor> listMonitor = new ArrayList<Monitor>();
-    ArrayList<Building> listBuildings = new ArrayList<Building>();
+    ArrayList<Monitor> listMonitor;
+    ArrayList<Building> listBuildings;
 
     public ControlRoom(ArrayList<Monitor> listMonitor, ArrayList<Building> listBuildings) {
         this.listMonitor = listMonitor;
@@ -20,7 +20,6 @@ public class ControlRoom {
     }
 
     public void manageNewHazard(BioHazardEvent bioHazardEvent) {
-        System.out.println("ouoiuouiuoiuiouoiuiouoiuoiu");
         if (bioHazardEvent instanceof GazEvent) {
             for (Monitor monitor : listMonitor) {
                 monitor.addEvent(bioHazardEvent);

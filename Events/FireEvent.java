@@ -9,11 +9,12 @@ public class FireEvent extends BioHazardEvent{
         super(source, date, localisation, importanceLevel);
     }
 
+    public String displayDetails(){
+        return "Alarme type feu niveau d'importance : " + getImportanceLevel();
+    }
+
     @Override
     public String toString() {
-        return "Fire event : -Date : "
-                + this.getDate() +
-                "  -Localisation : " + this.getLocalisation() + "\n" +
-                "  -Importance level : " + this.getImportanceLevel();
+        return "Alarme type feu niveau d'importance : " + getImportanceLevel();
     }
 }

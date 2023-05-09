@@ -8,6 +8,7 @@ public class Main {
 
 
         MonitorWindow monitorWindowA = new MonitorWindow();
+        MonitorWindow monitorWindowB = new MonitorWindow();
 
         ArrayList<Building> buildingsList = new ArrayList<Building>();
         buildingsList.add(new Building(new GazSensor("gaz1", null), new RadiationSensor("rad1", null), new FireSensor("fire1", null), "bat A"));
@@ -15,10 +16,9 @@ public class Main {
         buildingsList.add(new Building(new GazSensor("gaz3", null), new RadiationSensor("rad3", null), new FireSensor("fire3", null), "bat C"));
         ArrayList<Monitor> monitorList = new ArrayList<Monitor>();
         monitorList.add(new MonitorA(monitorWindowA));
-        monitorList.add(new MonitorB(monitorWindowA));
+        monitorList.add(new MonitorB(monitorWindowB));
         ControlRoom controlRoom = new ControlRoom(monitorList, buildingsList);
         GenerateHazardWindow window = new GenerateHazardWindow(controlRoom);
-//        MonitorWindow monitorWindowA = new MonitorWindow();
 
     }
-}//
+}
