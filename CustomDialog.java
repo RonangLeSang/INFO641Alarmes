@@ -1,4 +1,3 @@
-import javax.management.monitor.Monitor;
 import javax.swing.*;
 
 public class CustomDialog extends JOptionPane {
@@ -17,7 +16,7 @@ public class CustomDialog extends JOptionPane {
     @Override
     public void selectInitialValue() {
         super.selectInitialValue();
-        this.monitorWindow.refresh();
+        this.monitorWindow.refresh(monitor.getListEvent());
 
     }
 }

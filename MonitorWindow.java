@@ -46,6 +46,7 @@ public class MonitorWindow extends JFrame {
     }
     
     public void refresh(ArrayList<BioHazardEvent> ListEvent){
+        System.out.println("refresh");
         remove(eventsScrollPane);
         BioHazardEvent[] events = ListEvent.toArray(new BioHazardEvent[0]);
         eventsScrollPane = new JScrollPane(new JList<>(events));
