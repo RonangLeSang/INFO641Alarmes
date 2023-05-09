@@ -45,12 +45,17 @@ public class MonitorWindow extends JFrame {
         this.setVisible(true);
     }
     
-    public void refresh(ArrayList<BioHazardEvent> ListEvent){
+    public void refresh(ArrayList<BioHazardEvent> listEvent){
         System.out.println("refresh");
-        remove(eventsScrollPane);
-        BioHazardEvent[] events = ListEvent.toArray(new BioHazardEvent[0]);
-        eventsScrollPane = new JScrollPane(new JList<>(events));
-        add(eventsScrollPane, BorderLayout.CENTER);
+        final DefaultListModel model = new DefaultListModel();
+        for(BioHazardEvent event : listEvent){
+            model.addElement(event);
+        }
+        eventsList.setModel(model);
+//        remove(eventsScrollPane);
+//        BioHazardEvent[] events = ListEvent.toArray(new BioHazardEvent[0]);
+//        eventsScrollPane = new JScrollPane(new JList<>(events));
+//        add(eventsScrollPane, BorderLayout.CENTER);
     }
 
 //    public static void main(String[] args) {
