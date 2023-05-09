@@ -16,6 +16,7 @@ public class RadiationEvent extends BioHazardEvent{
     }
 
     public String displayDetails(){
-        return "Alarme type radiation niveau d'importance : " + getImportanceLevel();
+        return "Alarme type radiation niveau d'importance : " + getImportanceLevel() + "\n Niveau de radiation : " + radiationLevel +  "\nDate de l'alarme :" + getDate() + "\nBatiment : " + getLocalisation().getName();
     }
+
 }

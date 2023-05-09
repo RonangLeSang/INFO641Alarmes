@@ -21,6 +21,9 @@ public class GazEvent extends BioHazardEvent{
     }
 
     public String displayDetails(){
-        return "Alarme type gaz niveau d'importance : " + getImportanceLevel();
+        return "Alarme type gaz niveau d'importance : " + getImportanceLevel() + "\nType de gaz : " + getGazType() + "\nDate de l'alarme :" + getDate() + "\nBatiment : " + getLocalisation().getName() ;
     }
+
+
+
 }

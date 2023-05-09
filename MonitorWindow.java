@@ -9,7 +9,7 @@ public class MonitorWindow extends JFrame {
     private JList<BioHazardEvent> eventsList;
     JScrollPane eventsScrollPane;
     private JButton detailsButton1, detailsButton2;
-//    private Monitor aMonitor;
+//  private Monitor aMonitor;
     public MonitorWindow(){
 
 //        this.aMonitor = aMonitor;
@@ -35,11 +35,11 @@ public class MonitorWindow extends JFrame {
 
 
         JButton detailsButton1 = new JButton("Details");
-        JButton detailsButton2 = new JButton("Details");
+        detailsButton1.addActionListener(new DetailListener(eventsList, this));
 
         JPanel detailsPanel = new JPanel();
         detailsPanel.add(detailsButton1);
-        detailsPanel.add(detailsButton2);
+
         add(detailsPanel, BorderLayout.SOUTH);
 
         this.setVisible(true);
