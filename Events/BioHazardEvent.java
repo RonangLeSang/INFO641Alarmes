@@ -30,4 +30,8 @@ public abstract class BioHazardEvent extends EventObject {
     public int getImportanceLevel() {
         return importanceLevel;
     }
+
+    public Building getLocalisation(){
+        return this.localisation;
+    }
 }
