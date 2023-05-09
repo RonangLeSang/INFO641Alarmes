@@ -6,11 +6,13 @@ import Events.GazEvent;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public abstract class Monitor {
+public abstract class Monitor extends JFrame{
     protected ArrayList<BioHazardEvent> listEvent;
+    private MonitorWindow monitorWindow;
 
-    public Monitor(){
+    public Monitor(MonitorWindow monitorWindow){
         this.listEvent = new ArrayList<BioHazardEvent>();
+        this.monitorWindow = monitorWindow;
     }
 
     public ArrayList<BioHazardEvent> getListEvent() {
@@ -37,7 +39,7 @@ public abstract class Monitor {
             message += "Alarme de type radiation";
         }
 
-        JOptionPane.showMessageDialog(this, message, "Détails de l'alarme", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this,new CustomDialog(this.monitorWindow, message));
     }
 
 

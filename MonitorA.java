@@ -10,8 +10,8 @@ public class MonitorA extends Monitor implements FireListener, GazListener {//g√
 
 
 
-    public MonitorA() {
-        super();
+    public MonitorA(MonitorWindow monitorWindow) {
+        super(monitorWindow);
 
     }
 

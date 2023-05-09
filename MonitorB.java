@@ -6,8 +6,8 @@ import src.RadiationListener;
 
 public class MonitorB extends Monitor implements GazListener, RadiationListener {
 
-    public MonitorB() {
-        super();
+    public MonitorB(MonitorWindow monitorWindow) {
+        super(monitorWindow);
     }
 
     @Override

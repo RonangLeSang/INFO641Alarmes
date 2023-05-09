@@ -14,7 +14,7 @@ public class CustomDialog extends JOptionPane {
     @Override
     public void selectInitialValue() {
         super.selectInitialValue();
-        this.monitorWindow.
+        this.monitorWindow.refresh();
 
     }
 }
