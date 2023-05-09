@@ -5,6 +5,7 @@ import Events.GazEvent;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Monitor extends JFrame{
     protected ArrayList<BioHazardEvent> listEvent;
@@ -39,7 +40,11 @@ public abstract class Monitor extends JFrame{
             message += "Alarme de type radiation";
         }
 
-        JOptionPane.showOptionDialog(this, new CustomDialog(this.monitorWindow,this, message));
+        Object[] options = {"OK"};
+        int n = JOptionPane.showOptionDialog(monitorWindow, message, "Detail alarme survenu",JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+        if (n == JOptionPane.OK_OPTION){
+            monitorWindow.refresh(this.listEvent);
+        }
     }
 
 
