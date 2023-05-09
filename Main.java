@@ -14,4 +14,4 @@ public class Main {
         GenerateHazardWindow window = new GenerateHazardWindow(controlRoom);
 
     }
-}
+}//
