@@ -8,6 +8,12 @@ public class RadiationSensor extends Sensor{
     public RadiationSensor(String name, Building building) {
         super(name, building);
     }
+
+    @Override
+    public void generateHazard() {
+
+    }
+
     public RadiationEvent newRadiationEvent(int radiationLevel, Date date, Building localisation, int importanceLevel){
         /*
         Method that will generate a new radiation event

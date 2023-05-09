@@ -18,10 +18,6 @@ public abstract class Sensor{
         this.building = building;
     }
 
-
-
-
-
-
+    public abstract void generateHazard();
 
 }

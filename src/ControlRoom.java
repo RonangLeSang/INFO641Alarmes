@@ -13,6 +13,11 @@ public class ControlRoom {
     ArrayList<Monitor> listMonitor = new ArrayList<Monitor>();
     ArrayList<Building> listBuildings = new ArrayList<Building>();
 
+    public ControlRoom(ArrayList<Monitor> listMonitor, ArrayList<Building> listBuildings) {
+        this.listMonitor = listMonitor;
+        this.listBuildings = listBuildings;
+    }
+
     public void addMonitor(Monitor aMonitor) {
         this.listMonitor.add(aMonitor);
     }

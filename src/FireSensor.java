@@ -10,6 +10,11 @@ public class FireSensor extends Sensor{
         super(name, building);
     }
 
+    @Override
+    public void generateHazard() {
+
+    }
+
     public FireEvent newFireEvent(Date date, Building localisation, int importanceLevel){
         /*
         method that will generate a fire hazard event

@@ -33,8 +33,6 @@ public class GenerateHazardWindow extends JFrame{
         backPanel.setLayout(new GridLayout(0,1));
         panel1.setLayout(new GridLayout(0,2));
 
-        createButton.addActionListener(new CreateButtonListener(comboBoxBuilding, comboBoxType, spinnerLevel, textGazType, spinnerRadiationLevel, controlRoom.getListBuildings()));
-
         SpinnerNumberModel model1 = new SpinnerNumberModel(1, 1, 3, 1);
         this.spinnerLevel = new JSpinner(model1);
         SpinnerNumberModel model2 = new SpinnerNumberModel(50, 1, 100, 1);
@@ -44,6 +42,8 @@ public class GenerateHazardWindow extends JFrame{
         for(String name : nameList){
             comboBoxBuilding.addItem(name);
         }
+
+        createButton.addActionListener(new CreateButtonListener(controlRoom, comboBoxBuilding, comboBoxType, spinnerLevel, textGazType, spinnerRadiationLevel, controlRoom.getListBuildings()));
 
         comboBoxType.addItem("feu");
         comboBoxType.addItem("radiations");
