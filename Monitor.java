@@ -6,7 +6,7 @@ import Events.GazEvent;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public abstract class Monitor extends JWindow {
+public abstract class Monitor {
     protected ArrayList<BioHazardEvent> listEvent;
 
     public Monitor(){
