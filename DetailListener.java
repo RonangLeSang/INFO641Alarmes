@@ -18,7 +18,8 @@ public class DetailListener implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
 
         BioHazardEvent event = eventsList.getSelectedValue();
-        JDialog d = new JDialog(monitorWindow, "Detail" );
+        //JDialog d = new JDialog(monitorWindow, "Detail" );
+        DetailDialog d = new DetailDialog();
         JLabel l = new JLabel(event.displayDetails());
         d.add(l);
         d.setSize(400,400);
